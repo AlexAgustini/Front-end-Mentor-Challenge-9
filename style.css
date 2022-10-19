@@ -1,0 +1,143 @@
+/* CSS RESET */
+
+@import url('https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css');
+
+/* STYLES AND FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --red:hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange:hsl(34, 97%, 64%);
+    --blue:hsl(212, 86%, 64%);
+    --verydarkblue:hsl(234, 12%, 34%);
+    --grayishblue:hsl(229, 6%, 66%);
+    --verylightgray:hsl(0, 0%, 98%);
+
+}
+
+html {
+    font-size:15px
+}
+
+/* NORMAL CSS */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    width:85vw;
+    margin:4em auto;
+}
+
+header {
+    display:flex;
+    flex-direction: column;
+    gap:.3em;
+    text-align: center;
+    margin:0 auto;
+    margin-bottom:3.5em
+}
+
+header h2 {
+    font-weight:200;
+    font-size:1.7rem;
+}
+
+header h1 {
+     line-height: 1;
+     font-size:1.7rem;
+     margin-bottom:.5em;
+     color:var(--verydarkblue)
+}
+
+header p {
+    color:var(--grayishblue);
+}
+
+.grid-container {
+    display:grid;
+    gap:1.5em;
+}
+
+article {
+    background-color: white;
+    border-radius:5px;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    padding:1em;
+    box-shadow: 0 0 10px 0 var(--grayishblue);
+    gap:3em;
+}
+
+.articles-info p {
+    font-weight:200;
+}
+
+img {
+    max-width:3.5em;
+    justify-self: flex-end;
+    align-self:flex-end
+}
+
+.grid-container article:first-child {
+    border-top:3px solid var(--cyan)
+}
+
+.grid-container article:nth-child(2) {
+    border-top:3px solid var(--red)
+}
+
+.grid-container article:nth-child(3) {
+    border-top:3px solid var(--orange)
+}
+.grid-container article:nth-child(4) {
+    border-top:3px solid var(--blue)
+}
+
+@media (min-width:50em) {
+
+    header p {
+        width:40%;
+        margin:0 auto
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:1fr 1fr;
+        padding-inline:5em
+    }
+
+    article {
+        padding:1.5em
+    }
+
+    .grid-item1 {
+        grid-column:1 / 2;
+        transform: translateY(55%)
+    }
+
+    .grid-item2 {
+        grid-column: 2 / 3
+    }
+
+    .grid-item3 {
+        grid-column:2 / 3
+    }
+
+    .grid-item4 {
+        grid-column: 3 / 4;
+        grid-row:1 / 2;
+        transform: translateY(55%);
+    }
+
+
+}
